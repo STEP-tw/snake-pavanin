@@ -5,15 +5,16 @@ let numberOfCols=120;
 
 let animator=undefined;
 
+const getAnchortag=function(text,url){
+  tag=document.createElement("a");
+  tag.text=text;
+  tag.href=url;
+  return tag;
+}
+
 const addElement=function(){
   let hidden_tail= document.getElementById( "hidden_tail");
-  let msg=document.createElement("p");
-  let button=document.createElement("a");
-  msg.innerHTML="game over";
-  button.text="play again";
-  button.href="index.html";
-  hidden_tail.appendChild(msg);
-  hidden_tail.appendChild(button);
+  hidden_tail.appendChild(getAnchortag("play again","index.html"));
 }
 
 const endGame= function(){
