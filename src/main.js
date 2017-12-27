@@ -7,6 +7,14 @@ let animator=undefined;
 
 const endGame= function(){
   clearInterval(animator);
+  let hidden_tail= document.getElementById( "hidden_tail");
+  let msg=document.createElement("p");
+  let button=document.createElement("a");
+  msg.innerHTML="game over";
+  button.text="play again";
+  button.href="index.html";
+  hidden_tail.appendChild(msg);
+  hidden_tail.appendChild(button);
 }
 
 const animateSnake=function() {
@@ -22,7 +30,7 @@ const animateSnake=function() {
     createFood(numberOfRows,numberOfCols);
     drawFood(food);
   }
-  if(head.isTouchingEdges(numberOfCols,numberOfRows)||head.isTouchingBody(body)){
+  if(head.isTouchingEdges(numberOfCols-1,numberOfRows-1)||head.isTouchingBody(body)){
     endGame();
   }
 }
