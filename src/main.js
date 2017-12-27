@@ -5,8 +5,7 @@ let numberOfCols=120;
 
 let animator=undefined;
 
-const endGame= function(){
-  clearInterval(animator);
+const addElement=function(){
   let hidden_tail= document.getElementById( "hidden_tail");
   let msg=document.createElement("p");
   let button=document.createElement("a");
@@ -15,6 +14,11 @@ const endGame= function(){
   button.href="index.html";
   hidden_tail.appendChild(msg);
   hidden_tail.appendChild(button);
+}
+
+const endGame= function(){
+  clearInterval(animator);
+  addElement();
 }
 
 const animateSnake=function() {
