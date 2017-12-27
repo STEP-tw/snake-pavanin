@@ -5,10 +5,15 @@ let numberOfCols=120;
 
 let animator=undefined;
 
+const endGame= function(){
+  clearInterval(animator);
+}
+
 const animateSnake=function() {
   let oldHead=snake.getHead();
   let oldTail=snake.move();
   let head=snake.getHead();
+  let body=snake.getBody();
   paintBody(oldHead);
   unpaintSnake(oldTail);
   paintHead(head);
@@ -16,6 +21,9 @@ const animateSnake=function() {
     snake.grow();
     createFood(numberOfRows,numberOfCols);
     drawFood(food);
+  }
+  if(head.isTouchingEdges(numberOfCols,numberOfRows)||head.isTouchingBody(body)){
+    endGame();
   }
 }
 
