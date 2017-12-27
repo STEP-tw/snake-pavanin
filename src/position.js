@@ -43,19 +43,6 @@ Position.prototype.getCoord=function() {
   return [this.x,this.y];
 }
 
-Position.prototype.isTouchingEdges=function(maxX,maxY){
-  return this.x==0||this.y==0||this.x==maxX||this.y==maxY;
-}
-
-Position.prototype.isTouchingBody=function(body){
-  for(i=0;i<body.length;i++){
-    if (body[i].x==this.x && body[i].y==this.y){
-      return true;
-    }
-  }
-  return false;
-}
-
 const generateRandomPosition=function(maxX,maxY) {
   let x=generateRandomNumberBetween(0,maxX);
   let y=generateRandomNumberBetween(0,maxY);
