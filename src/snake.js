@@ -23,5 +23,13 @@ Snake.prototype={
   },
   turnRight:function() {
     this.head=this.head.turnRight();
+  },
+  isEatingItself:function() {
+    for(i=0;i<this.body.length;i++){
+      if (this.body[i].x==this.head.x && this.body[i].y==this.head.y){
+        return true;
+      }
+    }
+    return false;
   }
 }
