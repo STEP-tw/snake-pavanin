@@ -39,3 +39,11 @@ const drawSnake=function(snake) {
 const drawFood=function(food) {
   paintCell(food,"food");
 }
+
+const showReplay=function(){
+  let hidden_tail= document.getElementById( "hidden_tail");
+  replay=document.createElement("a");
+  replay.text="replay";
+  replay.href="index.html";
+  hidden_tail.appendChild(replay);
+}

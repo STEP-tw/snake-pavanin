@@ -5,21 +5,9 @@ let numberOfCols=120;
 
 let animator=undefined;
 
-const getAnchortag=function(text,url){
-  tag=document.createElement("a");
-  tag.text=text;
-  tag.href=url;
-  return tag;
-}
-
-const addElement=function(){
-  let hidden_tail= document.getElementById( "hidden_tail");
-  hidden_tail.appendChild(getAnchortag("play again","index.html"));
-}
-
 const endGame= function(){
   clearInterval(animator);
-  addElement();
+  showReplay();
 }
 
 const animateSnake=function() {
