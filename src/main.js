@@ -22,28 +22,10 @@ const endGame= function(){
   addElement();
 }
 
-// const isTouchingEdges=function(maxX,maxY,head){
-//   return head.x==0||head.y==0||head.x==maxX||head.y==maxY;
-// }
-//
-// const isTouchingBody=function(body,head){
-//   for(i=0;i<body.length;i++){
-//     if (body[i].x==head.x && body[i].y==head.y){
-//       return true;
-//     }
-//   }
-//   return false;
-// }
-//
-// const isSnakeDied=function(head,body){
-//   return isTouchingEdges(numberOfCols-1,numberOfRows-1,head)||isTouchingBody(body,head)
-// }
-
 const animateSnake=function() {
   let oldHead=snake.getHead();
   let oldTail=snake.move();
   let head=snake.getHead();
-  //let body=snake.getBody();
   paintBody(oldHead);
   unpaintSnake(oldTail);
   paintHead(head);
